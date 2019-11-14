@@ -38,7 +38,8 @@ public class KafkaStreamsSourceNodeRecordDeserializerInstrumentation extends Ins
             .and(named("deserialize"))
             .and(takesArgument(0, named("org.apache.kafka.clients.consumer.ConsumerRecord")))
             .and(returns(named("org.apache.kafka.clients.consumer.ConsumerRecord"))),
-        KafkaStreamsSourceNodeRecordDeserializerInstrumentation.class.getName() + "$SaveHeadersAdvice");
+        KafkaStreamsSourceNodeRecordDeserializerInstrumentation.class.getName()
+            + "$SaveHeadersAdvice");
   }
 
   public static class SaveHeadersAdvice {

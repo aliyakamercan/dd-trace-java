@@ -1,5 +1,10 @@
 package datadog.trace.instrumentation.http_url_connection;
 
+import static datadog.trace.instrumentation.api.AgentTracer.activateSpan;
+import static datadog.trace.instrumentation.api.AgentTracer.startSpan;
+import static java.util.Collections.singletonMap;
+import static net.bytebuddy.matcher.ElementMatchers.*;
+
 import com.google.auto.service.AutoService;
 import datadog.trace.agent.tooling.Instrumenter;
 import datadog.trace.api.Config;
@@ -9,19 +14,13 @@ import datadog.trace.bootstrap.InternalJarURLHandler;
 import datadog.trace.instrumentation.api.AgentScope;
 import datadog.trace.instrumentation.api.AgentSpan;
 import datadog.trace.instrumentation.api.Tags;
+import java.net.URL;
+import java.net.URLStreamHandler;
+import java.util.Map;
 import net.bytebuddy.asm.Advice;
 import net.bytebuddy.description.method.MethodDescription;
 import net.bytebuddy.description.type.TypeDescription;
 import net.bytebuddy.matcher.ElementMatcher;
-
-import java.net.URL;
-import java.net.URLStreamHandler;
-import java.util.Map;
-
-import static datadog.trace.instrumentation.api.AgentTracer.activateSpan;
-import static datadog.trace.instrumentation.api.AgentTracer.startSpan;
-import static java.util.Collections.singletonMap;
-import static net.bytebuddy.matcher.ElementMatchers.*;
 
 @AutoService(Instrumenter.class)
 public class UrlInstrumentation extends Instrumenter.Default {

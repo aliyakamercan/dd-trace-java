@@ -92,7 +92,6 @@ public final class TraceAnnotationsInstrumentation extends Instrumenter.Default 
   @Override
   public Map<? extends ElementMatcher<? super MethodDescription>, String> transformers() {
     return Collections.singletonMap(
-        isAnnotatedWith(methodTraceMatcher),
-        packageName + ".TraceAdvice");
+        isAnnotatedWith(methodTraceMatcher), packageName + ".TraceAdvice");
   }
 }

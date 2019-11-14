@@ -56,7 +56,7 @@ public final class JaxRsAsyncResponseInstrumentation extends Instrumenter.Defaul
         JaxRsAsyncResponseInstrumentation.class.getName() + "$AsyncResponseThrowableAdvice");
     transformers.put(
         named("cancel"),
-      JaxRsAsyncResponseInstrumentation.class.getName() + "$AsyncResponseCancelAdvice");
+        JaxRsAsyncResponseInstrumentation.class.getName() + "$AsyncResponseCancelAdvice");
     return transformers;
   }
 

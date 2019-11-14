@@ -64,7 +64,7 @@ public class KafkaStreamsProcessorInstrumentation {
               .and(isPackagePrivate())
               .and(named("nextRecord"))
               .and(returns(named("org.apache.kafka.streams.processor.internals.StampedRecord"))),
-        StartInstrumentation.class.getName() + "$StartSpanAdvice");
+          StartInstrumentation.class.getName() + "$StartSpanAdvice");
     }
 
     public static class StartSpanAdvice {

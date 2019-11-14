@@ -59,13 +59,14 @@ public final class JavaExecutorInstrumentation extends AbstractExecutorInstrumen
         JavaExecutorInstrumentation.class.getName() + "$SetJavaForkJoinStateAdvice");
     transformers.put(
         nameMatches("invoke(Any|All)$").and(takesArgument(0, Collection.class)),
-        JavaExecutorInstrumentation.class.getName() + "$SetCallableStateForCallableCollectionAdvice");
+        JavaExecutorInstrumentation.class.getName()
+            + "$SetCallableStateForCallableCollectionAdvice");
     transformers.put(
         nameMatches("invoke").and(takesArgument(0, ForkJoinTask.class)),
         JavaExecutorInstrumentation.class.getName() + "$SetJavaForkJoinStateAdvice");
     transformers.put(
         named("schedule").and(takesArgument(0, Runnable.class)),
-      JavaExecutorInstrumentation.class.getName() + "$SetSubmitRunnableStateAdvice");
+        JavaExecutorInstrumentation.class.getName() + "$SetSubmitRunnableStateAdvice");
     transformers.put(
         named("schedule").and(takesArgument(0, Callable.class)),
         JavaExecutorInstrumentation.class.getName() + "$SetCallableStateAdvice");

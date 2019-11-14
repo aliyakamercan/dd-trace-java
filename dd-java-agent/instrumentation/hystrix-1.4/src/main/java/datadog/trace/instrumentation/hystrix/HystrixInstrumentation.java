@@ -55,7 +55,7 @@ public class HystrixInstrumentation extends Instrumenter.Default {
         HystrixInstrumentation.class.getName() + "$ExecuteAdvice");
     transformers.put(
         named("getFallbackObservable").and(returns(named("rx.Observable"))),
-      HystrixInstrumentation.class.getName() + "$FallbackAdvice");
+        HystrixInstrumentation.class.getName() + "$FallbackAdvice");
     return transformers;
   }
 

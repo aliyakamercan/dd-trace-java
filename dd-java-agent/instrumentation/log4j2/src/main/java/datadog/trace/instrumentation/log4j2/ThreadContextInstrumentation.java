@@ -37,8 +37,7 @@ public class ThreadContextInstrumentation extends Instrumenter.Default {
   @Override
   public Map<? extends ElementMatcher<? super MethodDescription>, String> transformers() {
     return singletonMap(
-      isTypeInitializer(),
-      ThreadContextInstrumentation.class.getName() + "$ThreadContextAdvice");
+        isTypeInitializer(), ThreadContextInstrumentation.class.getName() + "$ThreadContextAdvice");
   }
 
   @Override

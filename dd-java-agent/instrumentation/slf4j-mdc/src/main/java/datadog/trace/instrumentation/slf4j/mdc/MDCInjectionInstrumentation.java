@@ -55,8 +55,7 @@ public class MDCInjectionInstrumentation extends Instrumenter.Default {
   @Override
   public Map<? extends ElementMatcher<? super MethodDescription>, String> transformers() {
     return singletonMap(
-      isTypeInitializer(),
-      MDCInjectionInstrumentation.class.getName() + "$MDCAdvice");
+        isTypeInitializer(), MDCInjectionInstrumentation.class.getName() + "$MDCAdvice");
   }
 
   @Override

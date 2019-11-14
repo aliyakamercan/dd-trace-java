@@ -72,7 +72,7 @@ public final class AkkaHttpServerInstrumentation extends Instrumenter.Default {
         AkkaHttpServerInstrumentation.class.getName() + "$AkkaHttpSyncAdvice");
     transformers.put(
         named("bindAndHandleAsync").and(takesArgument(0, named("scala.Function1"))),
-      AkkaHttpServerInstrumentation.class.getName() + "$AkkaHttpAsyncAdvice");
+        AkkaHttpServerInstrumentation.class.getName() + "$AkkaHttpAsyncAdvice");
     return transformers;
   }
 

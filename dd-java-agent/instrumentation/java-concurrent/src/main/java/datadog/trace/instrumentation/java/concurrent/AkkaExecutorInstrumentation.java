@@ -49,7 +49,7 @@ public final class AkkaExecutorInstrumentation extends AbstractExecutorInstrumen
     transformers.put(
         nameMatches("invoke")
             .and(takesArgument(0, named(AkkaForkJoinTaskInstrumentation.TASK_CLASS_NAME))),
-      AkkaExecutorInstrumentation.class.getName() + "$SetAkkaForkJoinStateAdvice");
+        AkkaExecutorInstrumentation.class.getName() + "$SetAkkaForkJoinStateAdvice");
     return transformers;
   }
 

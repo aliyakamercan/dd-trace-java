@@ -84,7 +84,7 @@ public class ApacheHttpClientInstrumentation extends Instrumenter.Default {
             .and(takesArguments(2))
             .and(takesArgument(0, named("org.apache.http.client.methods.HttpUriRequest")))
             .and(takesArgument(1, named("org.apache.http.protocol.HttpContext"))),
-      ApacheHttpClientInstrumentation.class.getName() + "$UriRequestAdvice");
+        ApacheHttpClientInstrumentation.class.getName() + "$UriRequestAdvice");
 
     transformers.put(
         isMethod()

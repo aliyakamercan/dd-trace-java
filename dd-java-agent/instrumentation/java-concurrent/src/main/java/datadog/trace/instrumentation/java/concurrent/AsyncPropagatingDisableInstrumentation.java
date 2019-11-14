@@ -79,8 +79,8 @@ public final class AsyncPropagatingDisableInstrumentation implements Instrumente
     @Override
     public Map<? extends ElementMatcher<? super MethodDescription>, String> transformers() {
       return singletonMap(
-        methodMatcher,
-        AsyncPropagatingDisableInstrumentation.class.getName() + "$DisableAsyncAdvice");
+          methodMatcher,
+          AsyncPropagatingDisableInstrumentation.class.getName() + "$DisableAsyncAdvice");
     }
   }
 
